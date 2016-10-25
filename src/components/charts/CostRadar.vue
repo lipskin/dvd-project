@@ -27,7 +27,7 @@ export default {
            { name: 'ELB', max: 30000 },
            { name: 'S3', max: 30000 },
            { name: 'Other', max: 38000 },
-          ],
+          ],gi
         },
         series: [{
           name: 'Cost',
