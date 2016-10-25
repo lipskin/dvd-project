@@ -29,7 +29,7 @@ export default {
     align-self: center;
     color: white;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: bold;
     cursor: pointer;
 }
 .link {
