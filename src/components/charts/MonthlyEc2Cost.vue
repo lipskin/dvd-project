@@ -3,11 +3,6 @@
 </template>
 
 <style scoped>
-.echarts {
-  height: 300px;
-}
-
-
 
 </style>
 
