@@ -1,61 +1,75 @@
 <template>
-  <chart :options="polar"></chart>
+  <chart :options="lineData"></chart>
 </template>
 
 <style scoped>
 .echarts {
   height: 300px;
 }
+
+
+
 </style>
 
 <script>
 
 export default {
   data() {
-    const data = [];
-
-    for (let i = 0; i <= 360; i += 1) {
-      const t = i / (180 * Math.PI);
-      const r = Math.sin(2 * t) * Math.cos(2 * t);
-      data.push([r, i]);
-    }
-
     return {
-      polar: {
+      lineData: {
         title: {
-          text: '极坐标双数值轴',
-        },
-        legend: {
-          data: ['line'],
-        },
-        polar: {
-          center: ['50%', '54%'],
+          text: 'EC2',
         },
         tooltip: {
           trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-          },
         },
-        angleAxis: {
-          type: 'value',
-          startAngle: 0,
+        legend: {
+          data: ['EC2 running Linux/UNIX', 'EBS'],
         },
-        radiusAxis: {
-          min: 0,
+        toolbox: {},
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
         },
-        series: [
+        xAxis: [
           {
-            coordinateSystem: 'polar',
-            name: 'line',
-            type: 'line',
-            showSymbol: false,
-            data,
+            type: 'category',
+            boundaryGap: false,
+            data: ['MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT', 'SUN'],
           },
         ],
-        animationDuration: 2000,
+        yAxis: [
+          {
+            type: 'value',
+          },
+        ],
+        series: [
+          {
+            name: 'EBS',
+            type: 'line',
+            stack: 'total',
+            areaStyle: { normal: { color: 'rgba(255, 138, 128, 1)' } },
+            data: [120, 132, 101, 134, 90, 230, 210],
+          },
+          {
+            name: 'EC2 running Linux/UNIX',
+            type: 'line',
+            stack: 'total',
+            /* label: {
+              normal: {
+                show: true,
+                position: 'top',
+              },
+            }, */
+            areaStyle: { normal: { color: 'rgba(128, 216, 255, 1)' } },
+            data: [220, 182, 191, 234, 290, 330, 310],
+          },
+        ],
       },
     };
   },
 };
+
 </script>
