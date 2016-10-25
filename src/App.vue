@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <app-bar></app-bar>
+    <monthly-ec2-cost></monthly-ec2-cost>
   </div>
 </template>
 
 <script>
 import AppBar from './components/shared/AppBar';
+import MonthlyEc2Cost from './components/charts/MonthlyEc2Cost';
 
 export default {
   name: 'app',
   components: {
     AppBar,
+    MonthlyEc2Cost,
   },
 };
 </script>
