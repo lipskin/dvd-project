@@ -26,8 +26,8 @@ export default {
            { name: 'RDS', max: 30000 },
            { name: 'ELB', max: 30000 },
            { name: 'S3', max: 30000 },
-           { name: 'Other', max: 38000 },
-          ],gi
+           { name: 'Other', max: 30000 },
+          ],
         },
         series: [{
           name: 'Cost',
