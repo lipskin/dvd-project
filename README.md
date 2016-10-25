@@ -1,5 +1,7 @@
 # dvd-project
 
+![Build Status](https://travis-ci.org/lipskin/dvd-project#)
+
 > Data visualization dashboard
 
 ## Build Setup
