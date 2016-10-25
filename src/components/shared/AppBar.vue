@@ -20,11 +20,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .app-bar {
+    display: flex;
     height: 65px;
     padding: 5px 30px;
     background-color: #00BCD4;
 }
 .logo {
+    align-self: center;
     color: white;
     font-size: 30px;
     font-weight: 300;
